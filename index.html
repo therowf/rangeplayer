@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>jQuery UI Slider - Vertical range slider</title>
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+			integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+			crossorigin="anonymous"
+		/>
+		<script src="./rangePlayer.js"></script>
+		<link rel="stylesheet" href="./rangePlayer.css" />
+		
+	</head>
+	<body>
+		<video id="tbk" width="400" controls>
+			<source src="http://funnymp4.net/files/download/id/5484" type="video/mp4" />
+			<source src="http://funnymp4.net/files/download/id/5484" type="video/ogg" />
+			Your browser does not support HTML5 video.
+		</video>
+
+	
+		<p>
+			<input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+		</p>
+
+		<script>
+			let video = RP("tbk")
+		</script>
+			
+		<style>
+			/*	video::-webkit-media-controls-enclosure {
+				display: none !important;
+			}
+			video::-webkit-media-controls {
+				display: none !important;
+			}
+			::-webkit-media-controls {
+				display: none !important;
+			}
+            */
+		
+		</style>
+	</body>
+</html>

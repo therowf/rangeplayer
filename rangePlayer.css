@@ -1,0 +1,34 @@
+.ctrl-box{
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    z-index: 9999999;
+    background: rgba(0,0,0,.5);
+}
+
+#video-box{
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+    justify-content: center;
+}
+
+#playVid {
+    color: #f06595;
+    font-size: 32px;
+}
+.controler {
+    display: flex;
+    align-items: center;
+    max-height: 32px;
+    justify-content: space-around;
+}
+#slider-range {
+    margin-left: 30px;
+}
+
+.video-dom{
+    width:100%;
+    height: 100%;
+}
