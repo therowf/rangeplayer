@@ -97,9 +97,7 @@
                 values: [0, vid.duration],
                 slide: function (event, ui) {
                     console.log('Start From : ' + ui.values[0] + ' To : ' + ui.values[1]);
-	$('input.videoStartval').val(ui.values[0])
-	$("input.videoEndval").val(ui.values[1])
-alert( $("#input-2 input").val())
+	global.vidAllValue = {start:ui.values[0], end:ui.values[1],}
                     vidProp.start = ui.values[0];
                     vidProp.end = ui.values[1];
                 },
