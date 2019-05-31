@@ -2,7 +2,7 @@
     global.RP = (domId) => {
         return new RangePlayer(domId)
     }
-global.vidAllValue={}
+
 
     function RangePlayer(domId) {
         $("#" + domId).wrap(`<div id="video-box">
@@ -97,7 +97,9 @@ global.vidAllValue={}
                 values: [0, vid.duration],
                 slide: function (event, ui) {
                     console.log('Start From : ' + ui.values[0] + ' To : ' + ui.values[1]);
-	global.vidAllValue = {start:ui.values[0], end:ui.values[1],}
+	$("#vid-start-val").val(ui.values[0])
+	$("#vid-end-val").val(ui.values[1])
+
                     vidProp.start = ui.values[0];
                     vidProp.end = ui.values[1];
                 },
