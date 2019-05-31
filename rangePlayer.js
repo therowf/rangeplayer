@@ -96,9 +96,10 @@
                 step: 0.01,
                 values: [0, vid.duration],
                 slide: function (event, ui) {
-                                      $("#vid-start-val").val(ui.values[0])
-                    global.vidStartVal = 500;
-                    $("#vid-end-val").val(ui.values[1])
+                    global.RPvidProp = {
+		    	start:ui.values[0],
+			end:ui.values[1],
+		    };
 
                     vidProp.start = ui.values[0];
                     vidProp.end = ui.values[1];
