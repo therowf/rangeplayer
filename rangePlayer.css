@@ -12,23 +12,72 @@
     align-items: flex-end;
     text-align: center;
     justify-content: center;
+    background: rgba(0,0,0,.9);
 }
 
-#playVid {
-    color: #f06595;
+#playVid, #ctrl-sound {
+    color: #f6f6f6;
     font-size: 32px;
+    cursor: pointer;
+
 }
 .controler {
-    display: flex;
+    display: grid;
     align-items: center;
-    max-height: 32px;
-    justify-content: space-around;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 40px;
 }
 #slider-range {
     margin-left: 30px;
 }
 
 .video-dom{
-    width:100%;
-    height: 100%;
+    width: 100%;
+    max-height: 90vh;
+}
+
+
+#vid-range, #vid-volume{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#vid-range{
+    width: 100%;
+}
+
+
+#vid-volume{
+    height: 250px;
+    width: 5px;
+    position: absolute;
+    bottom: 40px;
+    right: 16%;
+}
+
+#vid-volume .ui-slider-handle.ui-corner-all.ui-state-default{
+    border-radius: 30px;
+    left: -8.2px;
+    cursor:pointer;
+}
+
+#v-range{
+    position: absolute;
+    display: inline-block;
+    z-index: 999999999999;
+    width: 100%;
+    height: 2px;
+    background: #088;
+    top: 5px;
+    cursor:pointer;
+}
+
+#v-range .ui-slider-handle.ui-corner-all.ui-state-default{
+    left: 39%;
+    border-radius: 30px;
+    width: 3px;
+    height: 20px;
+    background: #088;
+    top: -0.9em;
+    cursor:pointer;
 }
