@@ -2,7 +2,7 @@
     global.RP = (domId) => {
         return new RangePlayer(domId)
     }
-
+global.vidAllValue={}
 
     function RangePlayer(domId) {
         $("#" + domId).wrap(`<div id="video-box">
