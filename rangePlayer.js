@@ -28,29 +28,29 @@
 
         vid.controls = false;
         vid.volume = .4;
-        let vidProp ={}
+        let vidProp = {}
         vid.ontimeupdate = function () {
-           // if (vidProp.start !== 0) {
-                if (vidPos() >= vidProp.end) {
-                    vid.pause();
-                    vid.currentTime = vidProp.end;
-                    $('#playVid').removeClass('fa-pause-circle');
-                    $('#playVid').addClass('fa-play-circle');
-                    vidProp.mode = 'off';
-                    
-                    $('#v-range').slider("value", vidProp.start);
-                  /*  $('#playVid').addClass('fa-play-circle');
-                    $('#playVid').removeClass('fa-pause-circle');
-                    */
-                }
-                $('#v-range').slider("value",vid.currentTime)
-               /*  if (vidPos() <= vidProp.start) {
-                    vid.currentTime = vidProp.start;
-                   $('#playVid').removeClass('fa-play-circle');
-                    $('#playVid').addClass('fa-pause-circle');
-                    
-                }*/
-           // }
+            // if (vidProp.start !== 0) {
+            if (vidPos() >= vidProp.end) {
+                vid.pause();
+                vid.currentTime = vidProp.end;
+                $('#playVid').removeClass('fa-pause-circle');
+                $('#playVid').addClass('fa-play-circle');
+                vidProp.mode = 'off';
+
+                $('#v-range').slider("value", vidProp.start);
+                /*  $('#playVid').addClass('fa-play-circle');
+                  $('#playVid').removeClass('fa-pause-circle');
+                  */
+            }
+            $('#v-range').slider("value", vid.currentTime)
+            /*  if (vidPos() <= vidProp.start) {
+                 vid.currentTime = vidProp.start;
+                $('#playVid').removeClass('fa-play-circle');
+                 $('#playVid').addClass('fa-pause-circle');
+                 
+             }*/
+            // }
         };
 
         function vidPos() {
@@ -60,7 +60,7 @@
         $('#ctrl-sound').click(() => {
             $('#vid-volume').toggle()
         })
-       
+
         $('#playVid').click(() => {
             if (vidProp.mode === 'off') {
                 vidProp.mode = 'on';
@@ -68,11 +68,11 @@
                 vid.currentTime = vidProp.start
                 vid.play()
                 $('#playVid').toggleClass('fa-play-circle fa-pause-circle');
-             } else if (vidProp.mode === 'on') {
+            } else if (vidProp.mode === 'on') {
                 vid.pause();
                 vidProp.mode = 'pause'
                 $('#playVid').toggleClass('fa-play-circle fa-pause-circle');
-            }else if (vidProp.mode === 'pause') {
+            } else if (vidProp.mode === 'pause') {
                 vid.play();
                 vidProp.mode = 'on'
                 $('#playVid').toggleClass('fa-play-circle fa-pause-circle');
@@ -86,8 +86,8 @@
                 mode: 'off'
             };
 
-        
-    
+
+
             $('#vid-range').slider({
                 orientation: 'horizontal',
                 range: true,
@@ -96,11 +96,17 @@
                 step: 0.01,
                 values: [0, vid.duration],
                 slide: function (event, ui) {
-                   	$("#RPvidStart").val(ui.values[0])
-			$("#RPvidEnd").val(ui.values[1])
+                    $("#RPvidStart").val(ui.values[0])
+                    $("#RPvidEnd").val(ui.values[1])
 
                     vidProp.start = ui.values[0];
                     vidProp.end = ui.values[1];
+                    if (ui.handleIndex === 0) {
+                      vid.currentTime = ui.values[0];
+                    }else if(ui.handleIndex === 1) {
+                        vid.currentTime = ui.values[1];
+                    }
+                   
                 },
                 change: function (event, ui) {
                     vid.pause();
@@ -108,9 +114,9 @@
                     $('#playVid').removeClass('fa-pause-circle');
                     $('#playVid').addClass('fa-play-circle');
                     vidProp.mode = 'off'
-                    $('#v-range').slider("option",{
-                        max:vidProp.end,
-                        min:vidProp.start,
+                    $('#v-range').slider("option", {
+                        max: vidProp.end,
+                        min: vidProp.start,
                     })
                     /* if (ui.handleIndex === 0) {
                          vid.play();
@@ -120,11 +126,13 @@
             });
 
 
+           
+
             $('#v-range').slider({
                 orientation: 'horizontal',
-                value:vidProp.start,
-                max:vidProp.end,
-                min:vidProp.start,
+                value: vidProp.start,
+                max: vidProp.end,
+                min: vidProp.start,
                 step: 0.01,
                 slide: function (event, ui) {
                     vidProp.mode = 'pause';
@@ -146,7 +154,7 @@
                 },
             });
 
-           
+
         };
 
     }

@@ -74,10 +74,18 @@
 
 #v-range .ui-slider-handle.ui-corner-all.ui-state-default{
     left: 39%;
-    border-radius: 30px;
-    width: 3px;
-    height: 20px;
+    border-radius: 35px;
+    width: 20px;
+    height: 20px !important;
     background: #088;
     top: -0.9em;
     cursor:pointer;
+}
+
+ .ui-slider .ui-slider-handle{
+    z-index: 0;
+}
+#vid-range .ui-slider-handle.ui-corner-all.ui-state-default{
+    height:2em;
+    top:-11px;
 }
