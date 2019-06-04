@@ -106,6 +106,10 @@
                     }else if(ui.handleIndex === 1) {
                         vid.currentTime = ui.values[1];
                     }
+                    $('#v-range').slider("option", {
+                        max: vidProp.end,
+                        min: vidProp.start,
+                    })
                    
                 },
                 change: function (event, ui) {
